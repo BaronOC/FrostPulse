@@ -1,0 +1,53 @@
+name: "Bug / Problème"
+description: "Signaler un problème reproductible / Report a reproducible problem."
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Merci pour votre retour. Vous pouvez répondre en français ou en anglais. / French and English reports are welcome."
+  - type: input
+    id: version
+    attributes:
+      label: "Version de FrostPulse / FrostPulse version"
+      placeholder: "1.0 Final"
+    validations:
+      required: true
+  - type: input
+    id: gpu
+    attributes:
+      label: "Modèle exact du GPU / Exact GPU model"
+      placeholder: "Marque, modèle et capacité mémoire / Brand, model and memory capacity"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: "Windows et pilote NVIDIA / Windows and NVIDIA driver"
+      placeholder: "Version de Windows et version du pilote / Windows and driver versions"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: "Étapes pour reproduire / Steps to reproduce"
+      description: "Décrivez les actions dans l'ordre. / Describe the actions in order."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Résultat attendu / Expected behavior"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Résultat observé / Actual behavior"
+    validations:
+      required: true
+  - type: textarea
+    id: attachments
+    attributes:
+      label: "Captures et détails / Screenshots and details"
+      description: "Joignez si utile une capture ou un export sans informations personnelles. / If useful, attach a screenshot or export without personal information."

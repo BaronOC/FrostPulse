@@ -1,0 +1,22 @@
+name: "Suggestion / Feature request"
+description: "Proposer une amélioration concrète / Suggest a concrete improvement."
+title: "[Suggestion] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: "Besoin ou difficulté / Need or problem"
+      description: "Dans quelle situation cette amélioration serait-elle utile ? / When would this improvement help?"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Amélioration proposée / Proposed improvement"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: "Contexte et exemples / Context and examples"

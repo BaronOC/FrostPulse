@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Questions et échanges / Questions and feedback"
+    url: https://github.com/BaronOC/FrostPulse/discussions
+    about: "Échanger avec la communauté et proposer des idées / Discuss with the community and share ideas."
+  - name: "Discord FrostPulse"
+    url: https://discord.gg/ETk7XmNFpB
+    about: "Rejoindre la communauté / Join the community."
