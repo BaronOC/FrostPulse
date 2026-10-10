@@ -16,10 +16,28 @@ My goal is a tool that is clear enough for everyday use and detailed enough for 
 
 ## Features
 
+### October 10, 2026 update: ASIC quality
+
+FrostPulse now displays **GPU ASIC quality** as a percentage below the GPU name, with details available through a click, tooltip and identification copy.
+
+For this addition, I used **HWiNFO's ASIC quality reading as a reference** and checked agreement on my RTX 5090 D: **43.3%** in both applications. FrostPulse reads the data natively; **HWiNFO does not need to be installed or running**.
+
+Availability depends on the GPU and driver. Unsupported readings show as unavailable. This index does not guarantee overclocking potential; hardware agreement has been verified on this RTX 5090 D.
+
+<details>
+<summary>View the ASIC reading validation screenshot</summary>
+
+![FrostPulse ASIC reading at 43.3%](assets/frostpulse-asic.png)
+
+*Validation screenshot showing ASIC quality at 43.3%. Other measurements depend on the sensors available when the screenshot was taken.*
+
+</details>
+
 | Feature | What it offers |
 | --- | --- |
 | **GPU and CPU monitoring** | Available temperatures, hotspot and VRAM data, clocks, load, power, fan speed and memory usage. |
 | **Min/max tracking** | Visible reference values throughout a session. |
+| **ASIC quality** | Native reading on compatible GPUs, shown below the GPU name with details and copy support. HWiNFO was used as a comparison reference. |
 | **GPU controls** | Core, Memory and XBAR offsets, power limit, fan control and Lock 3D on compatible setups. |
 | **Voltage controls** | Available NVVDD / MSVDD readings and controls, explicit application and restoration of initial references. |
 | **PCB / VRAM view** | Memory layout and individual module readings when exposed by the GPU. |
@@ -37,7 +55,7 @@ My goal is a tool that is clear enough for everyday use and detailed enough for 
 
 Profiles, colors, OSD settings and preferences are retained during updates.
 
-**Release:** 1.0 Final · **Build:** September 20, 2026 · **Platform:** Windows 64-bit.
+**Release:** 1.0 Final — ASIC update · **Build:** October 10, 2026 · **Platform:** Windows 64-bit.
 
 ## Compatibility
 

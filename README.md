@@ -27,10 +27,28 @@ Mon objectif est de construire un outil lisible au quotidien et suffisamment dé
 
 ## Ce que propose FrostPulse
 
+### Nouveauté du 10 octobre 2026 : qualité ASIC
+
+FrostPulse affiche désormais la **qualité ASIC du GPU**, en pourcentage sous son nom, avec les détails accessibles par clic, infobulle et copie de l'identification.
+
+Pour cet ajout, je me suis basé sur la lecture présentée par **HWiNFO** et j'ai vérifié la concordance sur ma RTX 5090 D : **43,3 %** dans les deux logiciels. FrostPulse effectue sa propre lecture native ; **HWiNFO n'a pas besoin d'être installé ou lancé**.
+
+La valeur dépend des données exposées par la carte et le pilote. Si elles ne sont pas disponibles, FrostPulse indique « indisponible ». Cet indice ne garantit pas le potentiel d'overclocking ; la concordance matérielle a été vérifiée sur cette RTX 5090 D.
+
+<details>
+<summary>Voir la capture de validation de la lecture ASIC</summary>
+
+![Lecture ASIC à 43,3 % dans FrostPulse](assets/frostpulse-asic.png)
+
+*Capture de validation de l'interface : ASIC à 43,3 %. Les autres mesures dépendent des sondes disponibles lors de la capture.*
+
+</details>
+
 | Fonction | Ce que vous retrouvez dans le logiciel |
 | --- | --- |
 | **Monitoring GPU et CPU** | Températures GPU, hotspot, VRAM et CPU, fréquences, charges, puissance, ventilation et mémoire utilisée, selon les sondes exposées. |
 | **Minimums et maximums** | Repères visibles pour suivre l'évolution des valeurs pendant une session. |
+| **Qualité ASIC** | Indice lu nativement sur les GPU compatibles, affiché sous le nom de la carte avec détails et copie. Lecture développée en prenant HWiNFO comme référence de comparaison. |
 | **Réglages GPU** | Offsets Core, Mémoire et XBAR, Power Limit, ventilation et Lock 3D sur les configurations compatibles. |
 | **Tensions** | Lecture et contrôles NVVDD / MSVDD lorsqu'ils sont disponibles, application explicite et restauration des références initiales. |
 | **Vue PCB / VRAM** | Représentation de la mémoire et suivi des modules lorsque la carte expose des températures individuelles. |
@@ -48,7 +66,7 @@ Mon objectif est de construire un outil lisible au quotidien et suffisamment dé
 
 Les profils, couleurs, réglages OSD et préférences sont conservés lors des mises à jour. Pour plus de détails, consultez le [guide d'installation](docs/INSTALLATION.md).
 
-**Version publiée :** 1.0 Final · **Build :** 20 septembre 2026 · **Plateforme :** Windows 64 bits.
+**Version publiée :** 1.0 Final — mise à jour ASIC · **Build :** 10 octobre 2026 · **Plateforme :** Windows 64 bits.
 
 ## Compatibilité
 
