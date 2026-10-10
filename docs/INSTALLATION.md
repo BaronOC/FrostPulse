@@ -30,10 +30,10 @@ Utilisez les applications installées de Windows. L'option de suppression des do
 
 ## Vérifier le fichier
 
-L'empreinte SHA-256 permet de comparer votre téléchargement au fichier publié. Pour la version 1.0 Final :
+L'empreinte SHA-256 permet de comparer votre téléchargement au fichier publié. Pour la version 1.0 Final du **10 octobre 2026**, avec lecture ASIC :
 
 ```text
-b244cf74c458ed8b628fcb48ec9d2a34abcdcc43d777ede6f486fd76e9cc0a5f
+9fb14c434e44e25f15fcb4674826630d8e3e88667080886945eb2a5023835bb2
 ```
 
 Dans PowerShell, depuis le dossier contenant le téléchargement :

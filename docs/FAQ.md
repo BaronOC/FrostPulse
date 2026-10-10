@@ -16,6 +16,12 @@ Les sondes exposées varient selon la carte et le pilote. La température de jon
 
 Non. Les possibilités dépendent du modèle, du VBIOS et du pilote. Un réglage avancé peut être indisponible même si le monitoring fonctionne. Partagez votre configuration dans les Discussions pour aider à documenter les différences.
 
+## Que signifie la qualité ASIC ?
+
+Il s'agit d'un indice issu des données usine exposées par le GPU et le pilote, affiché sous le nom de la carte. Les détails sont accessibles par clic ou infobulle et inclus dans la copie de l'identification. Cet indice ne garantit pas le potentiel d'overclocking.
+
+Pour développer cet ajout, je me suis basé sur la lecture de HWiNFO et j'ai vérifié une valeur identique de **43,3 %** sur ma RTX 5090 D. FrostPulse lit les données nativement ; HWiNFO n'a pas besoin d'être installé ou lancé. Si la lecture est indisponible sur votre carte ou votre pilote, FrostPulse l'indique. La compatibilité doit être vérifiée configuration par configuration.
+
 ## Faut-il RTSS pour l'overlay ?
 
 Oui, l'OSD en jeu s'appuie sur RivaTuner Statistics Server. Vérifiez que RTSS est installé et actif, et que le jeu ou l'application 3D est compatible avec son overlay.
