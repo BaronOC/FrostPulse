@@ -27,7 +27,13 @@ Mon objectif est de construire un outil lisible au quotidien et suffisamment dé
 
 ## Ce que propose FrostPulse
 
-### Nouveauté du 10 octobre 2026 : qualité ASIC
+### Version 1.1 Final — 12 octobre 2026
+
+Je vous propose **FrostPulse 1.1 Final** : offset et monitoring **SYS**, boutons **−15 / +15 MHz** pour Core, Mémoire, XBAR et SYS, et corrections de la personnalisation et de l'OSD.
+
+La fréquence SYS rejoint le tableau de bord, l'historique, les exports CSV, les profils et l'OSD sur les configurations compatibles. Les anciens profils restent lisibles. Retrouvez tous les changements dans les [notes de la version 1.1](https://github.com/BaronOC/FrostPulse/releases/tag/v1.1.0).
+
+### Qualité ASIC — ajout du 10 octobre 2026
 
 FrostPulse affiche désormais la **qualité ASIC du GPU**, en pourcentage sous son nom, avec les détails accessibles par clic, infobulle et copie de l'identification.
 
@@ -49,7 +55,7 @@ La valeur dépend des données exposées par la carte et le pilote. Si elles ne 
 | **Monitoring GPU et CPU** | Températures GPU, hotspot, VRAM et CPU, fréquences, charges, puissance, ventilation et mémoire utilisée, selon les sondes exposées. |
 | **Minimums et maximums** | Repères visibles pour suivre l'évolution des valeurs pendant une session. |
 | **Qualité ASIC** | Indice lu nativement sur les GPU compatibles, affiché sous le nom de la carte avec détails et copie. Lecture développée en prenant HWiNFO comme référence de comparaison. |
-| **Réglages GPU** | Offsets Core, Mémoire et XBAR, Power Limit, ventilation et Lock 3D sur les configurations compatibles. |
+| **Réglages GPU** | Offsets Core, Mémoire, XBAR et SYS avec boutons −15 / +15 MHz, Power Limit, ventilation et Lock 3D sur les configurations compatibles. |
 | **Tensions** | Lecture et contrôles NVVDD / MSVDD lorsqu'ils sont disponibles, application explicite et restauration des références initiales. |
 | **Vue PCB / VRAM** | Représentation de la mémoire et suivi des modules lorsque la carte expose des températures individuelles. |
 | **Historique et CSV** | Suivi des mesures et export pour examiner ou partager une session. |
@@ -60,13 +66,13 @@ La valeur dépend des données exposées par la carte et le pilote. Si elles ne 
 ## Télécharger et installer
 
 1. Ouvrez la [dernière version Final](https://github.com/BaronOC/FrostPulse/releases/latest).
-2. Téléchargez **FrostPulse-1.0-Setup.exe** dans la section **Assets**.
+2. Téléchargez **FrostPulse-1.1-Setup.exe** dans la section **Assets**.
 3. Lancez l'installateur, choisissez votre langue et suivez les étapes.
 4. Ouvrez FrostPulse depuis le menu Démarrer. Le raccourci Bureau est facultatif.
 
 Les profils, couleurs, réglages OSD et préférences sont conservés lors des mises à jour. Pour plus de détails, consultez le [guide d'installation](docs/INSTALLATION.md).
 
-**Version publiée :** 1.0 Final — mise à jour ASIC · **Build :** 10 octobre 2026 · **Plateforme :** Windows 64 bits.
+**Version publiée :** 1.1 Final · **Build :** 12 octobre 2026 · **Plateforme :** Windows 64 bits.
 
 ## Compatibilité
 

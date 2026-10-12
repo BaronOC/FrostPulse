@@ -16,7 +16,13 @@ My goal is a tool that is clear enough for everyday use and detailed enough for 
 
 ## Features
 
-### October 10, 2026 update: ASIC quality
+### Version 1.1 Final — October 12, 2026
+
+I'm releasing **FrostPulse 1.1 Final** with **SYS offset and monitoring**, **−15 / +15 MHz** buttons for Core, Memory, XBAR and SYS, and customization/OSD fixes.
+
+SYS frequency joins the dashboard, history, CSV exports, profiles and OSD on supported setups. Older profiles remain readable. See the [full version 1.1 release notes](https://github.com/BaronOC/FrostPulse/releases/tag/v1.1.0).
+
+### ASIC quality — added October 10, 2026
 
 FrostPulse now displays **GPU ASIC quality** as a percentage below the GPU name, with details available through a click, tooltip and identification copy.
 
@@ -38,7 +44,7 @@ Availability depends on the GPU and driver. Unsupported readings show as unavail
 | **GPU and CPU monitoring** | Available temperatures, hotspot and VRAM data, clocks, load, power, fan speed and memory usage. |
 | **Min/max tracking** | Visible reference values throughout a session. |
 | **ASIC quality** | Native reading on compatible GPUs, shown below the GPU name with details and copy support. HWiNFO was used as a comparison reference. |
-| **GPU controls** | Core, Memory and XBAR offsets, power limit, fan control and Lock 3D on compatible setups. |
+| **GPU controls** | Core, Memory, XBAR and SYS offsets with −15 / +15 MHz buttons, power limit, fan control and Lock 3D on compatible setups. |
 | **Voltage controls** | Available NVVDD / MSVDD readings and controls, explicit application and restoration of initial references. |
 | **PCB / VRAM view** | Memory layout and individual module readings when exposed by the GPU. |
 | **History and CSV** | Measurement history and exports for reviewing or sharing a session. |
@@ -49,13 +55,13 @@ Availability depends on the GPU and driver. Unsupported readings show as unavail
 ## Download
 
 1. Open the [latest Final release](https://github.com/BaronOC/FrostPulse/releases/latest).
-2. Download **FrostPulse-1.0-Setup.exe** from **Assets**.
+2. Download **FrostPulse-1.1-Setup.exe** from **Assets**.
 3. Run the installer, select your language and follow the steps.
 4. Launch FrostPulse from the Start menu. A desktop shortcut is optional.
 
 Profiles, colors, OSD settings and preferences are retained during updates.
 
-**Release:** 1.0 Final — ASIC update · **Build:** October 10, 2026 · **Platform:** Windows 64-bit.
+**Release:** 1.1 Final · **Build:** October 12, 2026 · **Platform:** Windows 64-bit.
 
 ## Compatibility
 
