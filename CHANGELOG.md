@@ -16,13 +16,13 @@
 - Le service local prend en charge SYS tout en conservant la compatibilité avec ses anciens clients.
 - L'application, l'installateur et la version affichée dans Windows passent à **1.1**.
 
-La lecture ASIC introduite dans la précédente Final reste disponible. Les fonctions SYS dépendent du GPU et du pilote : les données et contrôles non exposés restent indisponibles. La lecture SYS a été vérifiée sur ma RTX 5090 D ; l'application et la réinitialisation SYS sur le matériel n'ont pas été exécutées pendant les vérifications de développement.
+La lecture ASIC introduite dans la précédente Final reste disponible. Les fonctions SYS dépendent du GPU et du pilote : les données et contrôles non exposés restent indisponibles. La lecture SYS, l'application et la réinitialisation de l'offset ainsi que leur bon fonctionnement ont été vérifiés sur ma RTX 5090 D.
 
 Version interne : **1.1.0.0** · MSI : **1.1.0** · Tag : **v1.1.0**. Mise à jour depuis 1.0 avec conservation des paramètres.
 
 ### English
 
-SYS offset, frequency/min/max, history, CSV, profiles and OSD; −15/+15 MHz buttons for all four offsets; customization buttons moved below options; Baron removed from OSD text; About window simplified; GPU-index checks and local service SYS support. Older profiles and preferences are retained. SYS readings checked on my RTX 5090 D; hardware SYS Apply/Reset not performed during development verification. Executables are version 1.1.0.0, MSI 1.1.0.
+SYS offset, frequency/min/max, history, CSV, profiles and OSD; −15/+15 MHz buttons for all four offsets; customization buttons moved below options; Baron removed from OSD text; About window simplified; GPU-index checks and local service SYS support. Older profiles and preferences are retained. SYS readings, offset application and reset were verified to work correctly on my RTX 5090 D. Executables are version 1.1.0.0, MSI 1.1.0.
 
 ## 1.0 Final — mise à jour ASIC · 10 octobre 2026
 
