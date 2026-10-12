@@ -2,7 +2,7 @@
 
 ## Télécharger
 
-Ouvrez la [dernière release Final](https://github.com/BaronOC/FrostPulse/releases/latest) et téléchargez **FrostPulse-1.0-Setup.exe** dans **Assets**. Ce fichier est l'installateur Windows 64 bits de la version Final.
+Ouvrez la [dernière release Final](https://github.com/BaronOC/FrostPulse/releases/latest) et téléchargez **FrostPulse-1.1-Setup.exe** dans **Assets**. Ce fichier est l'installateur Windows 64 bits de la version Final.
 
 ## Installer
 
@@ -22,7 +22,7 @@ Pour afficher les métriques en jeu, RTSS doit être installé et actif. Sa pré
 
 ## Mettre à jour
 
-Fermez FrostPulse, puis lancez le nouvel installateur Final. Les profils, couleurs, réglages OSD et préférences sont conservés lors des mises à jour.
+Fermez complètement FrostPulse, puis lancez le nouvel installateur Final 1.1. La mise à jour reconnaît la version 1.0 déjà installée. Les profils, couleurs, réglages OSD et préférences sont conservés lors des mises à jour.
 
 ## Désinstaller
 
@@ -30,16 +30,16 @@ Utilisez les applications installées de Windows. L'option de suppression des do
 
 ## Vérifier le fichier
 
-L'empreinte SHA-256 permet de comparer votre téléchargement au fichier publié. Pour la version 1.0 Final du **10 octobre 2026**, avec lecture ASIC :
+L'empreinte SHA-256 permet de comparer votre téléchargement au fichier publié. Pour la version 1.1 Final du **12 octobre 2026** :
 
 ```text
-9fb14c434e44e25f15fcb4674826630d8e3e88667080886945eb2a5023835bb2
+ac298543cef394a0e205d97239d797e414f91fa7da4d1ed4f8e6be16ac96dac7
 ```
 
 Dans PowerShell, depuis le dossier contenant le téléchargement :
 
 ```powershell
-Get-FileHash -LiteralPath '.\FrostPulse-1.0-Setup.exe' -Algorithm SHA256
+Get-FileHash -LiteralPath '.\FrostPulse-1.1-Setup.exe' -Algorithm SHA256
 ```
 
 Si vous rencontrez un problème, consultez la [FAQ](FAQ.md) ou ouvrez un [rapport de bug](https://github.com/BaronOC/FrostPulse/issues/new/choose).
