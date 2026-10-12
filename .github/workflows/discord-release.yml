@@ -1,0 +1,146 @@
+name: FrostPulse — annonces Discord
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Aperçu ou test Discord sans ping
+        type: choice
+        required: true
+        default: preview
+        options: [preview, test]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: discord-release-${{ github.event.release.id || 'manual' }}
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    if: github.repository == 'BaronOC/FrostPulse' && (github.event_name == 'workflow_dispatch' || (github.event.release.draft == false && github.event.release.prerelease == false))
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Annoncer la nouvelle Final ou tester la connexion
+        env:
+          DISCORD_RELEASE_WEBHOOK: ${{ secrets.DISCORD_RELEASE_WEBHOOK }}
+          GITHUB_TOKEN: ${{ github.token }}
+          NOTIFY_MODE: ${{ inputs.mode }}
+          FROSTPULSE_NOTIFY_RUN: 'true'
+        shell: bash
+        run: |
+          node --input-type=module <<'FROSTPULSE_SCRIPT'
+          import { readFileSync } from 'node:fs';
+          
+          const repository = 'BaronOC/FrostPulse';
+          const quiet = value => String(value ?? '').replaceAll('@', '@\u200b');
+          const cut = (value, length) => value.length <= length ? value : value.slice(0, length - 1) + '…';
+          
+          export function buildMessage(release, test = false) {
+            if (!release || release.draft || release.prerelease) return null;
+            const prefix = `https://github.com/${repository}/releases/`;
+            if (!release.html_url?.startsWith(prefix + 'tag/')) throw new Error('Release extérieure au dépôt FrostPulse.');
+            const installer = release.assets?.find(asset =>
+              /^FrostPulse-[\d.]+-Setup\.exe$/i.test(asset.name) && asset.size > 0 &&
+              asset.browser_download_url?.startsWith(prefix + 'download/'));
+            if (!installer) return null;
+            const frenchNotes = String(release.body ?? '').split(/\n## English\s*\n/)[0]
+              .split(/\n## Télécharger et (?:mettre à jour|installer)\s*\n/)[0]
+              .replace(/^---\s*$/gm, '').trim();
+            return {
+              username: 'FrostPulse Releases',
+              content: test
+                ? '🧪 **Test de connexion — FrostPulse Releases**\nLes prochaines versions Final seront annoncées ici automatiquement.'
+                : '@everyone ❄️ **Une nouvelle version Final de FrostPulse est disponible !**',
+              allowed_mentions: { parse: test ? [] : ['everyone'], users: [], roles: [] },
+              ...(test ? { flags: 4096 } : {}),
+              embeds: [{
+                title: cut(quiet(release.name || release.tag_name), 256),
+                url: release.html_url,
+                color: 0x64c7ed,
+                description: cut(quiet(frenchNotes || 'Retrouvez les nouveautés et corrections dans les notes de mise à jour.'), 2800),
+                fields: [
+                  { name: '📥 Installateur Final', value: `[${quiet(installer.name)}](${installer.browser_download_url})` },
+                  { name: '📝 Notes de mise à jour', value: `[Lire la publication complète](${release.html_url})` },
+                  { name: '💬 Vos retours', value: `[Discussions GitHub](https://github.com/${repository}/discussions) · [Signaler un bug](https://github.com/${repository}/issues/new/choose)` }
+                ],
+                footer: { text: test ? 'Test sans mention · Windows 64 bits · NVIDIA · FR / EN' : 'FrostPulse by Baron · Windows 64 bits · NVIDIA · FR / EN' }
+              }]
+            };
+          }
+          
+          export function webhookDestination(raw) {
+            let url;
+            try { url = new URL(raw); } catch { throw new Error('Secret DISCORD_RELEASE_WEBHOOK absent ou invalide.'); }
+            if (url.protocol !== 'https:' || url.hostname !== 'discord.com' ||
+                !/^\/api(?:\/v\d+)?\/webhooks\/\d+\/[\w-]+$/.test(url.pathname) ||
+                url.username || url.password || url.hash) throw new Error('Webhook Discord invalide.');
+            url.search = '?wait=true';
+            return url;
+          }
+          
+          export async function sendMessage(raw, payload, request = fetch) {
+            const url = webhookDestination(raw);
+            for (let attempt = 0; attempt < 3; attempt++) {
+              let response;
+              try {
+                response = await request(url, {
+                  method: 'POST', headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(payload), signal: AbortSignal.timeout(20000)
+                });
+              } catch { throw new Error('Connexion Discord interrompue. Vérifier le salon avant de relancer pour éviter un doublon.'); }
+              if (response.status === 429 && attempt < 2) {
+                const limit = await response.json().catch(() => ({}));
+                const seconds = Number(limit.retry_after);
+                if (!Number.isFinite(seconds) || seconds < 0 || seconds > 30) throw new Error('Discord demande de réessayer plus tard.');
+                await new Promise(resolve => setTimeout(resolve, Math.ceil(seconds * 1000)));
+                continue;
+              }
+              if (!response.ok) throw new Error(`Envoi Discord refusé (HTTP ${response.status}).`);
+              const message = await response.json().catch(() => null);
+              if (!message?.id) throw new Error('Discord ne confirme pas la création du message. Vérifier le salon avant de relancer.');
+              return message.id;
+            }
+          }
+          
+          export async function run() {
+            if (process.env.GITHUB_REPOSITORY !== repository) throw new Error('Automatisation réservée au dépôt officiel FrostPulse.');
+            const event = JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8'));
+            const manual = process.env.GITHUB_EVENT_NAME === 'workflow_dispatch';
+            if (!manual && (event.action !== 'published' || event.release?.draft || event.release?.prerelease)) {
+              console.log('Ignoré : ce n’est pas une nouvelle release stable.'); return;
+            }
+            if (!manual && Number(process.env.GITHUB_RUN_ATTEMPT || 1) > 1) {
+              console.log('Relance ignorée pour éviter un second ping. Utiliser le mode test pour contrôler la connexion.'); return;
+            }
+            const mode = manual ? (process.env.NOTIFY_MODE || 'preview') : 'announce';
+            if (!['preview', 'test', 'announce'].includes(mode)) throw new Error('Mode inconnu.');
+            const endpoint = manual ? 'latest' : String(event.release?.id);
+            if (!manual && !/^\d+$/.test(endpoint)) throw new Error('Identifiant de release invalide.');
+            let payload;
+            for (let attempt = 0; attempt < 4; attempt++) {
+              const response = await fetch(`https://api.github.com/repos/${repository}/releases/${endpoint}`, {
+                headers: { Accept: 'application/vnd.github+json', Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, 'X-GitHub-Api-Version': '2022-11-28' },
+                signal: AbortSignal.timeout(20000)
+              });
+              if (!response.ok) throw new Error(`Lecture GitHub impossible (HTTP ${response.status}).`);
+              const release = await response.json();
+              if (release.draft || release.prerelease) { console.log('Release non stable : aucun message.'); return; }
+              payload = buildMessage(release, mode === 'test');
+              if (payload || manual) break;
+              if (attempt < 3) await new Promise(resolve => setTimeout(resolve, 10000));
+            }
+            if (!payload) throw new Error('Installateur Final absent : aucun message envoyé. Publier avec le Setup déjà chargé.');
+            if (mode === 'preview') { console.log(JSON.stringify(payload, null, 2)); return; }
+            const id = await sendMessage(process.env.DISCORD_RELEASE_WEBHOOK, payload);
+            console.log(`Message Discord confirmé (${id}).${mode === 'test' ? ' Test sans ping.' : ''}`);
+          }
+          
+          if (process.env.FROSTPULSE_NOTIFY_RUN === 'true') {
+            run().catch(() => { console.error('Notification échouée. Vérifier le secret, la release et le salon Discord. Aucune URL privée n’est journalisée.'); process.exitCode = 1; });
+          }
+          FROSTPULSE_SCRIPT
