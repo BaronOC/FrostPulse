@@ -1,5 +1,33 @@
 # Journal des versions / Changelog
 
+## 1.1 Final — Mesures et CSV · 15 octobre 2026
+
+- **History devient Mesures** en français et **Measurements** en anglais.
+- **Plusieurs courbes affichées simultanément**, avec un choix mémorisé parmi **19 métriques** : températures, puissance, fréquences, charges, tensions NVVDD/MSVDD, delta et autres mesures disponibles.
+- **Temps commun et échelles propres à chaque métrique** pour comparer le comportement du GPU pendant une même session.
+- **Lecture synchronisée au survol** et statistiques **minimum / moyenne / maximum** propres à chaque courbe.
+- **Agrandir** ouvre une vue plus large, avec retour possible à l'affichage intégré.
+- **Démarrer un run / Fermer le run** : un nouveau run remet ses mesures à zéro ; sa fermeture conserve les courbes et statistiques à l'écran tandis que le monitoring principal continue.
+
+### CSV automatique pendant le run
+
+- Le choix du fichier **CSV se fait avant le démarrage**. Annuler conserve le run précédent.
+- Les **19 métriques et les sondes mémoire individuelles disponibles** sont enregistrées à chaque relevé, même si elles ne sont pas affichées dans les graphiques.
+- Les données sont **écrites et vidées sur disque à chaque relevé**, pour conserver les relevés déjà enregistrés si l'application s'arrête brutalement. Ce comportement a été vérifié sur un processus de test interrompu.
+- **Horodatage UTC, date locale avec millisecondes et fuseau, temps écoulé** : les valeurs d'un même relevé partagent le même instant.
+- Suivi visible du **nombre de relevés**, de l'heure du dernier relevé et du chemin du fichier.
+- Les anciens boutons CSV séparés sont retirés de Mesures : **Démarrer** crée l'enregistrement et **Fermer** clôture le fichier.
+- Une erreur d'écriture arrête le run et affiche un état CSV explicite.
+
+Les fonctions de la précédente Final sont conservées, dont SYS, les offsets ±15 MHz et la lecture ASIC. Les mesures disponibles dépendent toujours du GPU et du pilote. Vos profils, couleurs, réglages OSD et préférences sont conservés lors de la mise à jour.
+
+Version interne **1.1.0.0** ; tag daté **final-2026-10-15**. L’ancienne release 1.1 reste disponible.
+
+### English
+
+Redesigned Measurements tab with a saved selection from 19 metrics, synchronized charts and hover readings, individual min/average/max statistics, and expanded view. Starting prompts for the CSV file; closing retains charts and statistics. Every sample is written and flushed to disk, including all metrics and available individual memory sensors, with UTC/local timestamps, milliseconds, time-zone offset and elapsed seconds. Live sample/file status, explicit write errors and simplified CSV controls. Previous Final features and preferences are retained. Executable version remains 1.1.0.0; release tag final-2026-10-15.
+
+
 ## 1.1 Final · 12 octobre 2026
 
 - **SYS OFFSET** rejoint les offsets Core, Mémoire et XBAR sur les GPU compatibles. Il est pris en compte par les commandes Appliquer et Réinitialiser.

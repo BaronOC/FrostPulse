@@ -10,13 +10,21 @@ I'm developing **FrostPulse** for hardware enthusiasts who want to understand th
 
 My goal is a tool that is clear enough for everyday use and detailed enough for advanced users. I also want to build a community around the project: your setups, feedback and ideas help me decide what to improve next.
 
-![FrostPulse 1.0 interface on an RTX 5090 D](assets/frostpulse-interface.jpg)
+![FrostPulse 1.1 — Measurements tab on an RTX 5090 D](assets/frostpulse-mesures-1.1.png)
 
-*Screenshot from an RTX 5090 D setup. Available sensors and controls vary by GPU and driver.*
+*Redesigned Measurements tab: four charts and their statistics from the same run on my RTX 5090 D. Available sensors and controls vary by GPU and driver.*
 
 ## Features
 
-### Version 1.1 Final — October 12, 2026
+### Latest Final — Measurements and CSV · October 15, 2026
+
+I've redesigned **Measurements** with multiple synchronized charts, a saved selection from **19 metrics**, and individual **minimum / average / maximum** statistics. **Expand** provides a larger view.
+
+**Start a run** prompts for the CSV file and records samples directly to disk, with precise UTC/local timestamps and elapsed seconds. **Close the run** finalizes the CSV while retaining its charts and statistics.
+
+See the [full release notes and updated Final installer](https://github.com/BaronOC/FrostPulse/releases/tag/final-2026-10-15).
+
+### Version 1.1 changes — October 12, 2026
 
 I'm releasing **FrostPulse 1.1 Final** with **SYS offset and monitoring**, **−15 / +15 MHz** buttons for Core, Memory, XBAR and SYS, and customization/OSD fixes.
 
@@ -47,7 +55,7 @@ Availability depends on the GPU and driver. Unsupported readings show as unavail
 | **GPU controls** | Core, Memory, XBAR and SYS offsets with −15 / +15 MHz buttons, power limit, fan control and Lock 3D on compatible setups. |
 | **Voltage controls** | Available NVVDD / MSVDD readings and controls, explicit application and restoration of initial references. |
 | **PCB / VRAM view** | Memory layout and individual module readings when exposed by the GPU. |
-| **History and CSV** | Measurement history and exports for reviewing or sharing a session. |
+| **History and CSV** | Synchronized charts, run statistics and live CSV recording with UTC/local timestamps and elapsed time. |
 | **Profiles and customization** | GPU profiles, colors, preferences and configurable OSD metrics. |
 | **In-game OSD** | RTSS integration for compatible games and 3D applications. |
 | **English and French** | Bilingual application and installer. |
@@ -61,7 +69,7 @@ Availability depends on the GPU and driver. Unsupported readings show as unavail
 
 Profiles, colors, OSD settings and preferences are retained during updates.
 
-**Release:** 1.1 Final · **Build:** October 12, 2026 · **Platform:** Windows 64-bit.
+**Release:** 1.1 Final — Measurements and CSV · **Build:** October 15, 2026 · **Platform:** Windows 64-bit.
 
 ## Compatibility
 

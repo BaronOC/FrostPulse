@@ -21,13 +21,21 @@ Je développe **FrostPulse** pour les passionnés de matériel qui veulent compr
 
 Mon objectif est de construire un outil lisible au quotidien et suffisamment détaillé pour les utilisateurs avancés. Je veux aussi faire grandir une communauté autour du projet : vos configurations, vos retours et vos idées m'aident à décider des prochaines améliorations.
 
-![Interface de FrostPulse 1.0 sur une RTX 5090 D](assets/frostpulse-interface.jpg)
+![FrostPulse 1.1 — onglet Mesures sur une RTX 5090 D](assets/frostpulse-mesures-1.1.png)
 
-*Capture de l'interface sur une configuration RTX 5090 D. Les sondes et réglages affichés varient selon la carte et le pilote.*
+*Nouvel onglet Mesures : quatre courbes et leurs statistiques sur un même run, sur ma RTX 5090 D. Les sondes et réglages disponibles dépendent de la carte et du pilote.*
 
 ## Ce que propose FrostPulse
 
-### Version 1.1 Final — 12 octobre 2026
+### Dernière Final — Mesures et CSV · 15 octobre 2026
+
+J'ai revu l'onglet **Mesures** pour afficher plusieurs courbes synchronisées, choisir parmi **19 métriques** et analyser chaque run avec ses **minimums, moyennes et maximums**. Le bouton **Agrandir** ouvre une vue plus large.
+
+**Démarrer un run** propose le fichier CSV avant la capture et enregistre les relevés directement sur disque, avec dates UTC/locales précises et temps écoulé. **Fermer le run** clôture le CSV tout en conservant les courbes et statistiques à l'écran. La sélection des métriques est mémorisée.
+
+Consultez les [notes complètes et le nouvel installateur Final](https://github.com/BaronOC/FrostPulse/releases/tag/final-2026-10-15).
+
+### Évolutions 1.1 du 12 octobre 2026
 
 Je vous propose **FrostPulse 1.1 Final** : offset et monitoring **SYS**, boutons **−15 / +15 MHz** pour Core, Mémoire, XBAR et SYS, et corrections de la personnalisation et de l'OSD.
 
@@ -58,7 +66,7 @@ La valeur dépend des données exposées par la carte et le pilote. Si elles ne 
 | **Réglages GPU** | Offsets Core, Mémoire, XBAR et SYS avec boutons −15 / +15 MHz, Power Limit, ventilation et Lock 3D sur les configurations compatibles. |
 | **Tensions** | Lecture et contrôles NVVDD / MSVDD lorsqu'ils sont disponibles, application explicite et restauration des références initiales. |
 | **Vue PCB / VRAM** | Représentation de la mémoire et suivi des modules lorsque la carte expose des températures individuelles. |
-| **Historique et CSV** | Suivi des mesures et export pour examiner ou partager une session. |
+| **Historique et CSV** | Courbes multiples synchronisées, statistiques par run et CSV écrit en direct, avec horodatages UTC/local et temps écoulé. |
 | **Profils et personnalisation** | Profils GPU, couleurs, préférences et configuration des métriques OSD. |
 | **OSD en jeu** | Intégration avec RivaTuner Statistics Server pour les jeux et applications 3D compatibles. |
 | **Français et anglais** | Choix de la langue dans l'installateur et interface bilingue. |
@@ -72,7 +80,7 @@ La valeur dépend des données exposées par la carte et le pilote. Si elles ne 
 
 Les profils, couleurs, réglages OSD et préférences sont conservés lors des mises à jour. Pour plus de détails, consultez le [guide d'installation](docs/INSTALLATION.md).
 
-**Version publiée :** 1.1 Final · **Build :** 12 octobre 2026 · **Plateforme :** Windows 64 bits.
+**Version publiée :** 1.1 Final — Mesures et CSV · **Build :** 15 octobre 2026 · **Plateforme :** Windows 64 bits.
 
 ## Compatibilité
 
