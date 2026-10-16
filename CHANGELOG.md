@@ -1,5 +1,37 @@
 # Journal des versions / Changelog
 
+## 1.1 Final — 14 skins intégrés · 17 octobre 2026
+
+Tous les styles sont inclus dans l'installateur Final. Choisissez votre interface dans **Réglages → Style de l'interface** : le changement s'applique immédiatement et votre choix est mémorisé.
+
+| Collection | Styles disponibles |
+| --- | --- |
+| **FrostPulse** | Moderne · Dot |
+| **HOF** | Blanc nacré · Cristal sombre · Polaire |
+| **Lightning** | Noir & Or · Carbone · Mesures |
+| **KINGPIN** | Copper · Cuivre usiné · Stealth Carbon · XOC Lab |
+| **Precision** | Precision X — Classic · Precision X1 — Moderne |
+
+**FrostPulse — Dot** associe noir et graphite, typographie à points, décor PCB monochrome et accents rouges sur les commandes actives. Les autres collections proposent des interfaces claires, cristallines, carbone, cuivre ou inspirées des instruments de monitoring.
+
+### Améliorations et corrections
+
+- **Couleurs personnalisées des tuiles** : le fond choisi est réellement appliqué, avec un contraste adapté des valeurs, titres et minimums/maximums. La disposition propre au skin est conservée.
+- **Sélecteur de style plus stable** : réduction du scintillement de la liste, application du style après validation et annulation du choix avec Échap.
+- **Fenêtre et redimensionnement** : commandes système intégrées, zones de redimensionnement et marges revues, corrections de découpe de l'ASIC et du pied de fenêtre.
+- **Lisibilité** : températures mieux contenues dans les cadres, graduations du cadran Classic adaptées aux petites tailles et champs d'offset plus lisibles.
+- **Décors KINGPIN et Precision** : proportions, repeinture après redimensionnement et rendu PCB retravaillés ; Precision X1 Moderne utilise une palette graphite avec détails bleus.
+- Les saisies en cours, le run/CSV, les préférences OSD et les profils restent conservés lors d'un changement de style. Les couleurs OSD restent indépendantes de celles de l'interface.
+
+Les fonctions de la Final précédente restent disponibles : **courbes multiples synchronisées dans Mesures, statistiques par run, CSV direct horodaté, SYS, offsets ±15 MHz et lecture ASIC**. Les sondes et contrôles accessibles dépendent du GPU et du pilote.
+
+Version interne **1.1.0.0** ; tag **final-2026-10-17**. [Galerie des skins](docs/SKINS.md).
+
+### English
+
+14 built-in styles across FrostPulse, HOF, Lightning, KINGPIN and Precision, including FrostPulse Dot. Immediate style switching with saved selection; corrected custom tile colors/contrast, reduced selector flicker, integrated window controls and resizing, temperature/dial readability and refined PCB rendering. Inputs, runs/CSV, profiles and OSD preferences are retained. All styles are included in the Final installer; no separate pack is needed. Executable version 1.1.0.0, release tag final-2026-10-17.
+
+
 ## 1.1 Final — Mesures et CSV · 15 octobre 2026
 
 - **History devient Mesures** en français et **Measurements** en anglais.

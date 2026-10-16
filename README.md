@@ -21,13 +21,25 @@ Je développe **FrostPulse** pour les passionnés de matériel qui veulent compr
 
 Mon objectif est de construire un outil lisible au quotidien et suffisamment détaillé pour les utilisateurs avancés. Je veux aussi faire grandir une communauté autour du projet : vos configurations, vos retours et vos idées m'aident à décider des prochaines améliorations.
 
-![FrostPulse 1.1 — onglet Mesures sur une RTX 5090 D](assets/frostpulse-mesures-1.1.png)
+![FrostPulse 1.1 — skin FrostPulse Dot](assets/skin-nothing-dot.png)
 
-*Nouvel onglet Mesures : quatre courbes et leurs statistiques sur un même run, sur ma RTX 5090 D. Les sondes et réglages disponibles dépendent de la carte et du pilote.*
+*FrostPulse — Dot, l’un des 14 styles intégrés. Capture du logiciel avec données de démonstration ; les sondes et contrôles disponibles dépendent de votre GPU et du pilote.*
 
 ## Ce que propose FrostPulse
 
-### Dernière Final — Mesures et CSV · 15 octobre 2026
+### Dernière Final — 14 skins intégrés · 17 octobre 2026
+
+J'ai ajouté **14 styles d'interface** dans l'installateur Final : FrostPulse, HOF, Lightning, KINGPIN et Precision. Retrouvez notamment **FrostPulse — Dot**, avec sa typographie à points, son PCB monochrome et ses actions rouges.
+
+Choisissez votre skin dans **Réglages → Style de l'interface** : changement immédiat et choix mémorisé. Les couleurs personnalisées des tuiles sont conservées, avec une meilleure lisibilité ; le redimensionnement et le sélecteur de style ont également été corrigés.
+
+| HOF — Blanc nacré | KINGPIN — Cuivre usiné |
+| --- | --- |
+| ![HOF Blanc nacré](assets/skin-hof-white.png) | ![KINGPIN Cuivre usiné](assets/skin-kingpin-machined.png) |
+
+*[Voir les 14 styles et la galerie](docs/SKINS.md) · [Télécharger la nouvelle Final et lire les changements](https://github.com/BaronOC/FrostPulse/releases/tag/final-2026-10-17). Captures avec données de démonstration.*
+
+### Mesures et CSV — 15 octobre 2026
 
 J'ai revu l'onglet **Mesures** pour afficher plusieurs courbes synchronisées, choisir parmi **19 métriques** et analyser chaque run avec ses **minimums, moyennes et maximums**. Le bouton **Agrandir** ouvre une vue plus large.
 
@@ -67,7 +79,7 @@ La valeur dépend des données exposées par la carte et le pilote. Si elles ne 
 | **Tensions** | Lecture et contrôles NVVDD / MSVDD lorsqu'ils sont disponibles, application explicite et restauration des références initiales. |
 | **Vue PCB / VRAM** | Représentation de la mémoire et suivi des modules lorsque la carte expose des températures individuelles. |
 | **Historique et CSV** | Courbes multiples synchronisées, statistiques par run et CSV écrit en direct, avec horodatages UTC/local et temps écoulé. |
-| **Profils et personnalisation** | Profils GPU, couleurs, préférences et configuration des métriques OSD. |
+| **Profils et personnalisation** | 14 styles intégrés, couleurs personnalisées, profils GPU, préférences et configuration des métriques OSD. |
 | **OSD en jeu** | Intégration avec RivaTuner Statistics Server pour les jeux et applications 3D compatibles. |
 | **Français et anglais** | Choix de la langue dans l'installateur et interface bilingue. |
 
@@ -80,7 +92,7 @@ La valeur dépend des données exposées par la carte et le pilote. Si elles ne 
 
 Les profils, couleurs, réglages OSD et préférences sont conservés lors des mises à jour. Pour plus de détails, consultez le [guide d'installation](docs/INSTALLATION.md).
 
-**Version publiée :** 1.1 Final — Mesures et CSV · **Build :** 15 octobre 2026 · **Plateforme :** Windows 64 bits.
+**Version publiée :** 1.1 Final — 14 skins intégrés · **Build :** 17 octobre 2026 · **Plateforme :** Windows 64 bits.
 
 ## Compatibilité
 

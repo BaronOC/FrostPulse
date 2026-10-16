@@ -10,13 +10,25 @@ I'm developing **FrostPulse** for hardware enthusiasts who want to understand th
 
 My goal is a tool that is clear enough for everyday use and detailed enough for advanced users. I also want to build a community around the project: your setups, feedback and ideas help me decide what to improve next.
 
-![FrostPulse 1.1 — Measurements tab on an RTX 5090 D](assets/frostpulse-mesures-1.1.png)
+![FrostPulse 1.1 — FrostPulse Dot skin](assets/skin-nothing-dot.png)
 
-*Redesigned Measurements tab: four charts and their statistics from the same run on my RTX 5090 D. Available sensors and controls vary by GPU and driver.*
+*FrostPulse — Dot, one of 14 built-in styles. Application screenshot with demonstration data; available sensors and controls depend on your GPU and driver.*
 
 ## Features
 
-### Latest Final — Measurements and CSV · October 15, 2026
+### Latest Final — 14 built-in skins · October 17, 2026
+
+I've added **14 interface styles** to the Final installer across FrostPulse, HOF, Lightning, KINGPIN and Precision, including **FrostPulse — Dot** with dotted typography, a monochrome PCB and red action accents.
+
+Choose a skin in **Settings → Interface style**. Changes apply immediately and the choice is saved. Custom tile colors are retained with improved contrast; window resizing and the style selector have also been improved.
+
+| HOF — Blanc nacré | KINGPIN — Cuivre usiné |
+| --- | --- |
+| ![HOF Blanc nacré](assets/skin-hof-white.png) | ![KINGPIN Cuivre usiné](assets/skin-kingpin-machined.png) |
+
+*[Browse all 14 styles and the gallery](docs/SKINS.md) · [Download the updated Final and read the release notes](https://github.com/BaronOC/FrostPulse/releases/tag/final-2026-10-17). Screenshots use demonstration data.*
+
+### Measurements and CSV — October 15, 2026
 
 I've redesigned **Measurements** with multiple synchronized charts, a saved selection from **19 metrics**, and individual **minimum / average / maximum** statistics. **Expand** provides a larger view.
 
@@ -56,7 +68,7 @@ Availability depends on the GPU and driver. Unsupported readings show as unavail
 | **Voltage controls** | Available NVVDD / MSVDD readings and controls, explicit application and restoration of initial references. |
 | **PCB / VRAM view** | Memory layout and individual module readings when exposed by the GPU. |
 | **History and CSV** | Synchronized charts, run statistics and live CSV recording with UTC/local timestamps and elapsed time. |
-| **Profiles and customization** | GPU profiles, colors, preferences and configurable OSD metrics. |
+| **Profiles and customization** | 14 built-in styles, custom colors, GPU profiles, preferences and configurable OSD metrics. |
 | **In-game OSD** | RTSS integration for compatible games and 3D applications. |
 | **English and French** | Bilingual application and installer. |
 
@@ -69,7 +81,7 @@ Availability depends on the GPU and driver. Unsupported readings show as unavail
 
 Profiles, colors, OSD settings and preferences are retained during updates.
 
-**Release:** 1.1 Final — Measurements and CSV · **Build:** October 15, 2026 · **Platform:** Windows 64-bit.
+**Release:** 1.1 Final — 14 built-in skins · **Build:** October 17, 2026 · **Platform:** Windows 64-bit.
 
 ## Compatibility
 
