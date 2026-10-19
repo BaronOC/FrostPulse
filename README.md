@@ -27,7 +27,15 @@ Mon objectif est de construire un outil lisible au quotidien et suffisamment dé
 
 ## Ce que propose FrostPulse
 
-### Dernière Final — 14 skins intégrés · 17 octobre 2026
+### Dernière Final — commandes et disposition · 20 octobre 2026
+
+J'ai ajouté des **curseurs pour les quatre offsets** en conservant la saisie exacte et les boutons **−15 / +15 MHz**. Le déplacement prépare une valeur ; **Appliquer ou Entrée** reste nécessaire pour l'envoyer au GPU.
+
+Cette Final améliore aussi la **ventilation** (curseur aligné, demande de 0 % soumise à confirmation du pilote), les **MIN/MAX sur une ligne**, les tuiles à petite largeur et les commandes au repos/pendant l'appui. **Personnaliser** se trouve désormais à gauche d'Actualisation ; le statut des sondes est placé près de l'ASIC et le sélecteur **SONDES** après Agrandir.
+
+[Lire les notes complètes et télécharger le nouvel installateur Final](https://github.com/BaronOC/FrostPulse/releases/tag/final-2026-10-20).
+
+### 14 skins intégrés — 17 octobre 2026
 
 J'ai ajouté **14 styles d'interface** dans l'installateur Final : FrostPulse, HOF, Lightning, KINGPIN et Precision. Retrouvez notamment **FrostPulse — Dot**, avec sa typographie à points, son PCB monochrome et ses actions rouges.
 
@@ -75,7 +83,7 @@ La valeur dépend des données exposées par la carte et le pilote. Si elles ne 
 | **Monitoring GPU et CPU** | Températures GPU, hotspot, VRAM et CPU, fréquences, charges, puissance, ventilation et mémoire utilisée, selon les sondes exposées. |
 | **Minimums et maximums** | Repères visibles pour suivre l'évolution des valeurs pendant une session. |
 | **Qualité ASIC** | Indice lu nativement sur les GPU compatibles, affiché sous le nom de la carte avec détails et copie. Lecture développée en prenant HWiNFO comme référence de comparaison. |
-| **Réglages GPU** | Offsets Core, Mémoire, XBAR et SYS avec boutons −15 / +15 MHz, Power Limit, ventilation et Lock 3D sur les configurations compatibles. |
+| **Réglages GPU** | Offsets Core, Mémoire, XBAR et SYS avec curseurs, saisie exacte et boutons −15 / +15 MHz, Power Limit, ventilation et Lock 3D sur les configurations compatibles. |
 | **Tensions** | Lecture et contrôles NVVDD / MSVDD lorsqu'ils sont disponibles, application explicite et restauration des références initiales. |
 | **Vue PCB / VRAM** | Représentation de la mémoire et suivi des modules lorsque la carte expose des températures individuelles. |
 | **Historique et CSV** | Courbes multiples synchronisées, statistiques par run et CSV écrit en direct, avec horodatages UTC/local et temps écoulé. |
@@ -92,7 +100,7 @@ La valeur dépend des données exposées par la carte et le pilote. Si elles ne 
 
 Les profils, couleurs, réglages OSD et préférences sont conservés lors des mises à jour. Pour plus de détails, consultez le [guide d'installation](docs/INSTALLATION.md).
 
-**Version publiée :** 1.1 Final — 14 skins intégrés · **Build :** 17 octobre 2026 · **Plateforme :** Windows 64 bits.
+**Version publiée :** 1.1 Final — commandes et disposition · **Build :** 20 octobre 2026 · **Plateforme :** Windows 64 bits.
 
 ## Compatibilité
 

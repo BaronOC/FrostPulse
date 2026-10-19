@@ -1,5 +1,32 @@
 # Journal des versions / Changelog
 
+## 1.1 Final — commandes et disposition · 20 octobre 2026
+
+- **Curseurs pour Core, Mémoire, XBAR et SYS** : ajustement à la souris, saisie exacte et boutons **−15 / +15 MHz** conservés. Les lectures, profils et réinitialisations synchronisent les valeurs affichées.
+- Déplacer un curseur prépare la valeur : **l'application reste explicite via Appliquer ou Entrée dans la saisie**, sans envoi automatique au GPU au déplacement ou au relâchement.
+- **Ventilation** : curseur recentré sur la saisie numérique, synchronisation dans les deux sens et échelle commençant à **0 %**.
+- Une demande à 0 % est confirmée à partir des valeurs PWM réellement remontées par chaque ventilateur. Si le pilote ne la confirme pas, FrostPulse revient au mode automatique et signale le refus. **L'arrêt physique des ventilateurs dépend de la carte et du pilote.**
+- **Boutons harmonisés** : Power Limit, Appliquer et les commandes ordinaires restent neutres au repos et prennent la couleur du skin pendant l'appui. Les vues et modes réellement actifs conservent leur état sélectionné.
+
+### Affichage et disposition
+
+- **MIN/MAX centrés sur une seule ligne**, avec une taille de texte adaptée à la largeur de chaque tuile et aux valeurs affichées.
+- **Grille plus lisible à petite largeur** : les mesures sont réparties sur davantage de rangées au lieu de comprimer toutes les cartes sur deux lignes.
+- **Personnaliser** est placé dans l'en-tête, juste à gauche d'**Actualisation**, pour garder l'action discrète sans ajouter de barre au-dessus des tuiles.
+- **Statut des sondes à droite de l'ASIC** ; les messages longs restent consultables dans leur infobulle.
+- Dans Mesures, le sélecteur devient **SONDES (n)** et se place après **Agrandir**, avec une disposition adaptée à la place disponible.
+- **Vue mémoire compacte** : espacement des modules adapté à la hauteur disponible pour éviter leurs chevauchements.
+- Disposition ajustée pour conserver les trois graphiques du style **Lightning — Mesures** après l'ajout des curseurs.
+
+Les **14 skins intégrés**, les couleurs personnalisées, les profils, l'OSD, les courbes synchronisées, les statistiques de run et le CSV direct horodaté restent disponibles. Les fonctions dépendent des sondes et contrôles exposés par votre matériel.
+
+Version interne **1.1.0.0** ; tag **final-2026-10-20**. Anciennes releases conservées.
+
+### English
+
+Sliders for all four offsets alongside direct entry and ±15 MHz buttons; explicit Apply/Enter still required. Aligned fan slider with driver-verified 0% requests, automatic-mode fallback on refusal, harmonized button press states, adaptive single-line MIN/MAX and compact tile rows, Customize left of Refresh, sensor status near ASIC, SENSORS after Expand, and improved compact memory/Lightning chart layouts. Existing skins, profiles, OSD and run/CSV features are retained. Physical fan stop depends on the GPU and driver. Executable version 1.1.0.0, tag final-2026-10-20.
+
+
 ## 1.1 Final — 14 skins intégrés · 17 octobre 2026
 
 Tous les styles sont inclus dans l'installateur Final. Choisissez votre interface dans **Réglages → Style de l'interface** : le changement s'applique immédiatement et votre choix est mémorisé.

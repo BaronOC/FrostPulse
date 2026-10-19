@@ -16,7 +16,15 @@ My goal is a tool that is clear enough for everyday use and detailed enough for 
 
 ## Features
 
-### Latest Final — 14 built-in skins · October 17, 2026
+### Latest Final — controls and layout · October 20, 2026
+
+I've added **sliders for all four offsets** while keeping direct entry and **−15 / +15 MHz** buttons. Moving a slider only prepares a value; **Apply or Enter** is still required to send it to the GPU.
+
+This Final also improves **fan controls** (aligned slider, 0% requests checked against the driver), **single-line MIN/MAX**, compact tile layouts and button press states. **Customize** now sits left of Refresh; sensor status is next to ASIC and **SENSORS** follows Expand.
+
+[Read the full release notes and download the updated Final installer](https://github.com/BaronOC/FrostPulse/releases/tag/final-2026-10-20).
+
+### 14 built-in skins — October 17, 2026
 
 I've added **14 interface styles** to the Final installer across FrostPulse, HOF, Lightning, KINGPIN and Precision, including **FrostPulse — Dot** with dotted typography, a monochrome PCB and red action accents.
 
@@ -64,7 +72,7 @@ Availability depends on the GPU and driver. Unsupported readings show as unavail
 | **GPU and CPU monitoring** | Available temperatures, hotspot and VRAM data, clocks, load, power, fan speed and memory usage. |
 | **Min/max tracking** | Visible reference values throughout a session. |
 | **ASIC quality** | Native reading on compatible GPUs, shown below the GPU name with details and copy support. HWiNFO was used as a comparison reference. |
-| **GPU controls** | Core, Memory, XBAR and SYS offsets with −15 / +15 MHz buttons, power limit, fan control and Lock 3D on compatible setups. |
+| **GPU controls** | Core, Memory, XBAR and SYS offsets with sliders, direct entry and −15 / +15 MHz buttons, power limit, fan control and Lock 3D on compatible setups. |
 | **Voltage controls** | Available NVVDD / MSVDD readings and controls, explicit application and restoration of initial references. |
 | **PCB / VRAM view** | Memory layout and individual module readings when exposed by the GPU. |
 | **History and CSV** | Synchronized charts, run statistics and live CSV recording with UTC/local timestamps and elapsed time. |
@@ -81,7 +89,7 @@ Availability depends on the GPU and driver. Unsupported readings show as unavail
 
 Profiles, colors, OSD settings and preferences are retained during updates.
 
-**Release:** 1.1 Final — 14 built-in skins · **Build:** October 17, 2026 · **Platform:** Windows 64-bit.
+**Release:** 1.1 Final — controls and layout · **Build:** October 20, 2026 · **Platform:** Windows 64-bit.
 
 ## Compatibility
 
