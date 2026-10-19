@@ -26,7 +26,7 @@ Pour afficher les métriques en jeu, RTSS doit être installé et actif. Sa pré
 
 ## Mettre à jour
 
-Fermez complètement FrostPulse, puis lancez le nouvel installateur Final 1.1. La mise à jour reconnaît la version 1.0 déjà installée. Les profils, couleurs, réglages OSD et préférences sont conservés lors des mises à jour.
+Fermez complètement FrostPulse, y compris son instance dans la zone de notification, puis lancez le nouvel installateur Final 1.1. La mise à jour reconnaît la version 1.0 déjà installée. Les profils, couleurs, réglages OSD et préférences sont conservés lors des mises à jour.
 
 ## Désinstaller
 
@@ -34,10 +34,10 @@ Utilisez les applications installées de Windows. L'option de suppression des do
 
 ## Vérifier le fichier
 
-L'empreinte SHA-256 permet de comparer votre téléchargement au fichier publié. Pour la version 1.1 Final du **17 octobre 2026**, avec les 14 skins intégrés :
+L'empreinte SHA-256 permet de comparer votre téléchargement au fichier publié. Pour la version 1.1 Final du **20 octobre 2026**, avec les correctifs de commandes et de disposition :
 
 ```text
-e425c5895b7fa7a7972b198a29a784fb5e1217425996035fb771ef8caf6306ed
+2b86447b2a49b2d10196720c03767533fdeb8b05f13cd7b064dd0d757728f090
 ```
 
 Dans PowerShell, depuis le dossier contenant le téléchargement :
